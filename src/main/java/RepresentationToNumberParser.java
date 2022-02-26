@@ -29,10 +29,10 @@ public class RepresentationToNumberParser {
         int[][] patternToTwo = new int[3][3];
         patternToTwo[0][1] = 1;
         patternToTwo[1][1] = 1;
-        patternToTwo[0][2] = 1;
+        patternToTwo[1][2] = 1;
         patternToTwo[2][0] = 1;
-        patternToTwo[2][0] = 1;
-        NumberRepresentation twoValue = new NumberRepresentation(patternToOne);
+        patternToTwo[2][1] = 1;
+        NumberRepresentation twoValue = new NumberRepresentation(patternToTwo);
         twoValue.setValue(2);
         NumberRepresentationList.add(twoValue);
         int[][] patternToTree = new int[3][3];
@@ -41,7 +41,7 @@ public class RepresentationToNumberParser {
         patternToTree[1][2] = 1;
         patternToTree[2][1] = 1;
         patternToTree[2][2] = 1;
-        NumberRepresentation treeValue = new NumberRepresentation(patternToOne);
+        NumberRepresentation treeValue = new NumberRepresentation(patternToTree);
         treeValue.setValue(3);
         NumberRepresentationList.add(treeValue);
         int[][] patternToFour = new int[3][3];
@@ -49,7 +49,7 @@ public class RepresentationToNumberParser {
         patternToFour[1][1] = 1;
         patternToFour[1][2] = 1;
         patternToFour[2][2] = 1;
-        NumberRepresentation fourValue = new NumberRepresentation(patternToOne);
+        NumberRepresentation fourValue = new NumberRepresentation(patternToFour);
         fourValue.setValue(4);
         NumberRepresentationList.add(fourValue);
         int[][] patternToFive = new int[3][3];
@@ -57,8 +57,8 @@ public class RepresentationToNumberParser {
         patternToFive[1][0] = 1;
         patternToFive[1][1] = 1;
         patternToFive[2][1] = 1;
-        patternToFive[1][1] = 1;
-        NumberRepresentation fiveValue = new NumberRepresentation(patternToOne);
+        patternToFive[2][2] = 1;
+        NumberRepresentation fiveValue = new NumberRepresentation(patternToFive);
         fiveValue.setValue(5);
         NumberRepresentationList.add(fiveValue);
         int[][] patternToSix = new int[3][3];
@@ -68,14 +68,14 @@ public class RepresentationToNumberParser {
         patternToSix[2][0] = 1;
         patternToSix[2][1] = 1;
         patternToSix[2][2] = 1;
-        NumberRepresentation sixValue = new NumberRepresentation(patternToOne);
+        NumberRepresentation sixValue = new NumberRepresentation(patternToSix);
         sixValue.setValue(6);
         NumberRepresentationList.add(sixValue);
         int[][] patternToSeven = new int[3][3];
         patternToSeven[0][1] = 1;
         patternToSeven[1][2] = 1;
         patternToSeven[2][2] = 1;
-        NumberRepresentation sevenValue = new NumberRepresentation(patternToOne);
+        NumberRepresentation sevenValue = new NumberRepresentation(patternToSeven);
         sevenValue.setValue(7);
         NumberRepresentationList.add(sevenValue);
         int[][] patternToEight = new int[3][3];
@@ -86,7 +86,7 @@ public class RepresentationToNumberParser {
         patternToEight[2][0] = 1;
         patternToEight[2][1] = 1;
         patternToEight[2][2] = 1;
-        NumberRepresentation eightValue = new NumberRepresentation(patternToOne);
+        NumberRepresentation eightValue = new NumberRepresentation(patternToEight);
         eightValue.setValue(8);
         NumberRepresentationList.add(eightValue);
         int[][] patternToNine = new int[3][3];
@@ -96,7 +96,7 @@ public class RepresentationToNumberParser {
         patternToNine[1][2] = 1;
         patternToNine[2][1] = 1;
         patternToNine[2][2] = 1;
-        NumberRepresentation nineValue = new NumberRepresentation(patternToOne);
+        NumberRepresentation nineValue = new NumberRepresentation(patternToNine);
         nineValue.setValue(9);
         NumberRepresentationList.add(nineValue);
         int[][] patternToZero = new int[3][3];
@@ -106,7 +106,7 @@ public class RepresentationToNumberParser {
         patternToZero[2][0] = 1;
         patternToZero[2][1] = 1;
         patternToZero[2][2] = 1;
-        NumberRepresentation zeroValue = new NumberRepresentation(patternToOne);
+        NumberRepresentation zeroValue = new NumberRepresentation(patternToZero);
         zeroValue.setValue(0);
         NumberRepresentationList.add(zeroValue);
     }
