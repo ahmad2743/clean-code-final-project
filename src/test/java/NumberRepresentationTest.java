@@ -24,6 +24,7 @@ public class NumberRepresentationTest {
         matrix2[1][1] = 1;
         matrix2[0][0] = 1;
         matrix2[1][2] = 1;
+        NumberRepresentation mat2 = new NumberRepresentation(matrix2);
         int [][] matrix3 = new int[3][3];
         matrix3[1][0] = 0;
         matrix3[1][1] = 1;
@@ -31,7 +32,6 @@ public class NumberRepresentationTest {
         matrix3[1][2] = 1;
         NumberRepresentation mat3 = new NumberRepresentation(matrix3);
 
-        NumberRepresentation mat2 = new NumberRepresentation(matrix2);
 
         Assertions.assertEquals(true, mat1.equals(mat2));
         Assertions.assertEquals(false, mat1.equals(mat3));

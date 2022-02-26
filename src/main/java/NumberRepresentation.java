@@ -38,7 +38,6 @@ public class NumberRepresentation {
             }
         }
         return true;
-        //return Arrays.equals(myMatrix, that.myMatrix);
     }
 
     @Override
