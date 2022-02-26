@@ -1,8 +1,9 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class RepresentationToNumberParser {
     private NumberRepresentation representation;
-    private List<NumberRepresentation> NumberRepresentationList;
+    private List<NumberRepresentation> NumberRepresentationList = new ArrayList<>();
 
     public RepresentationToNumberParser(NumberRepresentation representation) {
         this.representation = representation;
@@ -100,8 +101,8 @@ public class RepresentationToNumberParser {
         NumberRepresentationList.add(nineValue);
         int[][] patternToZero = new int[3][3];
         patternToZero[0][1] = 1;
-        patternToZero[1][1] = 1;
-        patternToZero[1][3] = 1;
+        patternToZero[1][0] = 1;
+        patternToZero[1][2] = 1;
         patternToZero[2][0] = 1;
         patternToZero[2][1] = 1;
         patternToZero[2][2] = 1;

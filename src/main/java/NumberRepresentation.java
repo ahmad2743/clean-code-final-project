@@ -1,5 +1,6 @@
 import javax.naming.directory.InvalidAttributesException;
 import java.security.InvalidParameterException;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class NumberRepresentation {
@@ -9,7 +10,9 @@ public class NumberRepresentation {
     NumberRepresentation(int[][] matrix){
         if (matrix.length == 3)
             this.myMatrix = matrix;
-        throw new InvalidParameterException();
+        else
+            throw new InvalidParameterException();
+
     }
 
 
@@ -27,7 +30,15 @@ public class NumberRepresentation {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         NumberRepresentation that = (NumberRepresentation) o;
-        return Arrays.equals(myMatrix, that.myMatrix);
+        for (int i = 0; i < myMatrix.length; i++){
+            for (int j = 0; j < myMatrix.length; j++){
+                if ((myMatrix[i][j] == 1) && (that.myMatrix[i][j] != 1)){
+                    return false;
+                }
+            }
+        }
+        return true;
+        //return Arrays.equals(myMatrix, that.myMatrix);
     }
 
     @Override
