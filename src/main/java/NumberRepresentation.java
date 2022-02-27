@@ -32,7 +32,8 @@ public class NumberRepresentation {
         NumberRepresentation that = (NumberRepresentation) o;
         for (int i = 0; i < myMatrix.length; i++){
             for (int j = 0; j < myMatrix.length; j++){
-                if ((myMatrix[i][j] == 1) && (that.myMatrix[i][j] != 1)){
+                if ((myMatrix[i][j] == 1) && (that.myMatrix[i][j] != 1) ||
+                        ((myMatrix[i][j] == 0 ) && (that.myMatrix[i][j] != 0))){
                     return false;
                 }
             }

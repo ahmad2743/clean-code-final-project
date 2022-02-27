@@ -25,14 +25,29 @@ class RepresentationToNumberParserTest {
         RepresentationToNumberParser rep2 = new RepresentationToNumberParser(twoValue);
         Assertions.assertEquals(2, rep2.parserValue());
 
+        //--------------------------------------------------
 
-        //----------------------------------------------
+        int[][] patternToSeven = new int[3][3];
+        patternToSeven[0][1] = 1;
+        patternToSeven[1][2] = 1;
+        patternToSeven[2][2] = 1;
+        NumberRepresentation sevenValue = new NumberRepresentation(patternToSeven);
+        RepresentationToNumberParser rep7 = new RepresentationToNumberParser(sevenValue);
+        Assertions.assertEquals(7, rep7.parserValue());
+
+        //----------------------------------------------------
 
         int[][] patternToNine = new int[3][3];
-        patternToNine[0][0] = 1;
-
+        patternToNine[0][1] = 1;
+        patternToNine[1][0] = 1;
+        patternToNine[1][1] = 1;
+        patternToNine[1][2] = 1;
+        patternToNine[2][1] = 1;
+        patternToNine[2][2] = 1;
         NumberRepresentation nineValue = new NumberRepresentation(patternToNine);
-        RepresentationToNumberParser repNine = new RepresentationToNumberParser(nineValue);
-        Assertions.assertEquals(-1, repNine.parserValue());
+        RepresentationToNumberParser rep9 = new RepresentationToNumberParser(nineValue);
+        Assertions.assertEquals(9, rep9.parserValue());
+
+
     }
 }
