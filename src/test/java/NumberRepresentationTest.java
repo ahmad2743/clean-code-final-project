@@ -2,15 +2,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class NumberRepresentationTest {
-
-    @Test
-    void getValue() {
-    }
-
-    @Test
-    void setValue() {
-    }
-
     @Test
     void testEquals() {
         int [][] matrix1 = new int[3][3];

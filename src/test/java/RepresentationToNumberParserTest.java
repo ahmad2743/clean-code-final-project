@@ -48,6 +48,12 @@ class RepresentationToNumberParserTest {
         RepresentationToNumberParser rep9 = new RepresentationToNumberParser(nineValue);
         Assertions.assertEquals(9, rep9.parserValue());
 
+        //--------------------------------------------
+        int[][] notValue = new int[3][3];
+        NumberRepresentation notValueTest = new NumberRepresentation(notValue);
+        RepresentationToNumberParser nullTest = new RepresentationToNumberParser(notValueTest);
+        Assertions.assertEquals(-1, nullTest.parserValue());
+
 
     }
 }
