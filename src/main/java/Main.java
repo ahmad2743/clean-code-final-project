@@ -18,7 +18,7 @@ public class Main {
         System.out.println(list.toString());
     }*/
 
-    public static void main(String ...args){
+    /*public static void main(String ...args){
         List<Integer> l = new ArrayList<>();
         l.add(5);
         l.add(2);
@@ -48,5 +48,23 @@ public class Main {
         CodeValidatorEngine engine = new CodeValidatorEngine();
         System.out.println(engine.validateListCode(list));
     }
-}
+}*/
 
+    public static void main(String ...args) throws IOException{
+        // Windows: C:/SomeFolder/out-file.txt
+        File outFile = new File("/Users/ahmad/Downloads/cleanCodeFinalProject/src/main/java/out-file.txt");
+
+        outFile.getParentFile().mkdirs();
+
+        // FileWriter(File outFile, boolean append)
+        FileWriter fileWriter = new FileWriter(outFile, true);
+
+        System.out.println("Writer file: " + outFile.getAbsolutePath());
+        System.out.println("With encoding: " + fileWriter.getEncoding());
+
+        fileWriter.write("Line 4");
+        fileWriter.write("\n");
+        fileWriter.append("Line 5").append("\n");
+        fileWriter.close();
+    }
+}
