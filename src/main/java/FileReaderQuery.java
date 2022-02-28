@@ -18,7 +18,6 @@ public class FileReaderQuery implements Query {
         String line = null;
 
         while((line = br.readLine())!= null) {
-            System.out.println(line.length());
             if(line.length() != 0){
                 lineList.add(line);
             }

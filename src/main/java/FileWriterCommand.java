@@ -23,9 +23,9 @@ public class FileWriterCommand implements Command{
     @Override
     public void WriteInSeparatedFile(List<String> list, String storagePath) throws IOException {
 
-        File outFileAuthorized = new File(storagePath+"Authorized.txt");
-        File outFileErrored = new File(storagePath+"Errored.txt");
-        File outFileUnknown = new File(storagePath+"Unknown.txt");
+        File outFileAuthorized = new File(storagePath+"Authorized");
+        File outFileErrored = new File(storagePath+"Errored");
+        File outFileUnknown = new File(storagePath+"Unknown");
 
 
         outFileAuthorized.getParentFile().mkdirs();

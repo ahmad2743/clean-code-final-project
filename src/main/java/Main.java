@@ -1,70 +1,51 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+/*
+* args (option) flags: -r: readFile input position 0
+* filePath:  file input path position 1
+* args (option) flags -o: specified output file or path position 2
+* output filePath : position 3
+* args (option) flags -m: for three files output or -s: for single file output position 4
+*
+*
+*
+*
+* */
 
 public class Main {
-    /*public static void main(String ...args) throws IOException {
-        String filePath = "/Users/ahmad/Downloads/cleanCodeFinalProject/src/main/java/test.txt";
-        FileReaderQuery fileReader = new FileReaderQuery();
-        QueryHandler handler = new QueryHandler(fileReader);
-        handler.getNumberFromFile(filePath);
-        List<List<Integer>> result = handler.getOutput();
-        System.out.println(result.toString());
-    }*/
+    public static void main(String ...args) throws IOException {
+        if (args.length > 1){
+            if(args[0].equals("-r")){
+                String filePath = args[1];
+                FileReaderQuery fileReader = new FileReaderQuery();
+                QueryHandler handler = new QueryHandler(fileReader);
+                handler.getNumberFromFile(filePath);
+                List<List<Integer>> result = handler.getOutput();
+                CodeValidatorEngine engine = new CodeValidatorEngine();
+                FileWriterCommand writer = new FileWriterCommand();
+                List<String> validatedCodes = engine.validateListCode(result);
+                if (args[2].equals("-o")){
+                    String output = args[3];
+                    String outputMode = args[4];
+                    switch (outputMode){
+                        case "-s": writer.writeInOneFile(validatedCodes, output);
+                            System.out.println("file successfully created in "+output);
+                            break;
+                        case "-m": writer.WriteInSeparatedFile(validatedCodes, output);
+                            System.out.println("files successfully created in "+output);
+                            break;
+                        default: return;
+                    }
+                }
+                else
+                    throw new IllegalArgumentException();
+            }
+            else
+                throw new IllegalArgumentException();
+        }
+        else
+            throw new IllegalArgumentException();
 
-    /*public static void main(String ... args) throws IOException {
-       FileReaderQuery fr = new FileReaderQuery();
-       List<String> list = fr.readFile("/Users/ahmad/Downloads/cleanCodeFinalProject/src/main/java/test.txt");
-        System.out.println(list.toString());
-    }*/
-
-    /*public static void main(String ...args){
-        List<Integer> l = new ArrayList<>();
-        l.add(5);
-        l.add(2);
-        l.add(6);
-        l.add(3);
-        l.add(0);
-        l.add(1);
-        l.add(3);
-        l.add(0);
-        l.add(1);
-
-        List<Integer> l2 = new ArrayList<>();
-        l2.add(1);
-        l2.add(2);
-        l2.add(9);
-        l2.add(8);
-        l2.add(-1);
-        l2.add(5);
-        l2.add(3);
-        l2.add(0);
-        l2.add(1);
-
-        List<List<Integer>> list = new ArrayList<>();
-        list.add(l);
-        list.add(l2);
-
-        CodeValidatorEngine engine = new CodeValidatorEngine();
-        System.out.println(engine.validateListCode(list));
-    }
-}*/
-
-    public static void main(String ...args) throws IOException{
-        // Windows: C:/SomeFolder/out-file.txt
-        File outFile = new File("/Users/ahmad/Downloads/cleanCodeFinalProject/src/main/java/out-file.txt");
-
-        outFile.getParentFile().mkdirs();
-
-        // FileWriter(File outFile, boolean append)
-        FileWriter fileWriter = new FileWriter(outFile, true);
-
-        System.out.println("Writer file: " + outFile.getAbsolutePath());
-        System.out.println("With encoding: " + fileWriter.getEncoding());
-
-        fileWriter.write("Line 4");
-        fileWriter.write("\n");
-        fileWriter.append("Line 5").append("\n");
-        fileWriter.close();
     }
 }
