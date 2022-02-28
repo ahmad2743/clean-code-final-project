@@ -18,8 +18,14 @@ public class QueryHandler {
         output.add(nbParse.parserValue());
     }
 
-    public List<Integer> getOutput() {
-        return output;
+    public List<List<Integer>> getOutput() {
+        List<List<Integer>> out = new ArrayList<>();
+        List<Integer> item = new ArrayList<>();
+        for (int i = 0; i < output.size(); i=i+9){
+            item = output.subList(i, i+9);
+            out.add(item);
+        }
+        return out;
     }
 
     public void getNumberFromFile(String path) throws IOException {
@@ -45,7 +51,7 @@ public class QueryHandler {
                 createAndAddRepresentationToList(obj);
                 System.out.println("["+obj[0][0]+","+obj[0][1]+","+obj[0][2]);
                 System.out.println(" "+obj[1][0]+","+obj[1][1]+","+obj[1][2]);
-                System.out.println(" "+obj[2][0]+","+obj[2][1]+","+obj[2][2]+"] \n");
+                System.out.println(" "+obj[2][0]+","+obj[2][1]+","+obj[2][2]+"] ");
                 i = i+3;
             }
         }

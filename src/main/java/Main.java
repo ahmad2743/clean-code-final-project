@@ -7,7 +7,7 @@ public class Main {
         FileReaderQuery fileReader = new FileReaderQuery();
         QueryHandler handler = new QueryHandler(fileReader);
         handler.getNumberFromFile(filePath);
-        List<Integer> result = handler.getOutput();
+        List<List<Integer>> result = handler.getOutput();
         System.out.println(result.toString());
     }
 
